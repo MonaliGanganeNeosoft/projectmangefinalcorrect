@@ -33,7 +33,7 @@ import {
     CLEAR_ERRORS,
 }from '../constants/projectAllConstants';
 
-//get All project when login
+//get All project when login =>all tab
 export const getAllProject = () =>async (dispatch)=>{
     try{
         dispatch({type:ALL_PROJECTALL_REQUEST});
@@ -49,7 +49,7 @@ export const getAllProject = () =>async (dispatch)=>{
         })
     }
 }
-// Create all new project
+// Create all new project=>all tab
 export const createAllProjectAdmin = (projectData) => async (dispatch) => {
   try {
     dispatch({ type:NEWAll_PROJECT_REQUEST });
@@ -93,7 +93,7 @@ export const getAdminAllProject = () =>async (dispatch)=>{
     }
 }
 
-
+//delete admin self project
 export const deleteAdminProject = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ADMINPROJECT_REQUEST });

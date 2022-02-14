@@ -12,15 +12,14 @@ import { useHistory } from "react-router-dom";
 
 
 
-const Header = () => {
+const Header = ({ location}) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  
-  
+ 
   const logoutUser=()=>{
-    // history.push("/login");
-    dispatch(logout());
-    history.push("/login");
+   
+    dispatch(logout(history.push("/login")));
+    
     }
   return <>
   <div>

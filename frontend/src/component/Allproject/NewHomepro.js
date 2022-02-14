@@ -25,6 +25,8 @@ const styled = {
   color: "red",
 };
 const regForName = RegExp(/^[A-Za-z]{3,30}$/);
+// const regForText=RegExp(/^[a-zA-Z]*$/);
+const regForText=RegExp(/^[a-zA-Z\s]*$/);
 const regForURL = RegExp(
   /^(https?|ftp|torrent|image|irc):\/\/(-\.)?([^\s\/?\.#-]+\.?)+(\/[^\s]*)?$/
 );
@@ -79,7 +81,7 @@ const NewProject = ({ history }) => {
         seterrors({ ...errors, errTitle: error });
         break;
       case "text":
-        error = regForName.test(value) ? "" : "Invalid text";
+        error = regForText.test(value) ? "" : "Invalid text";
         seterrors({ ...errors, errText: error });
         break;
 

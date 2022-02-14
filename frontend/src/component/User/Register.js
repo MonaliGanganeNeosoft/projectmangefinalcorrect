@@ -257,7 +257,7 @@ const handler = (event) => {
              
 
               <div id="registerImage">
-                <img src={avatarPreview} alt="Avatar Preview"  style={{marginTop:"10px"}}/>
+                <img src={avatarPreview} alt="Avatar Preview"  style={{marginTop:"10px",height:"200px"}}/>
                 <input
                   type="file"
                   name="avatar"

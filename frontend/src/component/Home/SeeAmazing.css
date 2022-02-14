@@ -6,3 +6,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+@media (max-width: 575.98px) {
+    .m-5 .innertexts{
+        border: 2px solid red;
+        height: 680px;
+    }
+}

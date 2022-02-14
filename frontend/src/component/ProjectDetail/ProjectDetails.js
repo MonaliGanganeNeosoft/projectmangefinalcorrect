@@ -21,7 +21,7 @@ const ProjectDetails = ({ match }) => {
 
   return (
     <>
-      <div className="ProjectDetails" style={{ border: "2px solid black" }}>
+      <div className="ProjectDetails" style={{ border: "2px solid black",height:"600px" }}>
         <div
           className="firstimg"
           style={{ height: "500px", textAlign: "center" }}

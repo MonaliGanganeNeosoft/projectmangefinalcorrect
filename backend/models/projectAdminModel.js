@@ -7,7 +7,7 @@ const projectDetailsAdminSchema = mongoose.Schema({
   description: {
     type: String,
     required: [true, "pls enter Description"],
-    minlength:[10,'Description is not empty']
+    minlength: [10, "Description is not empty"],
   },
   images: [
     {
@@ -18,7 +18,6 @@ const projectDetailsAdminSchema = mongoose.Schema({
   text: {
     type: String,
     required: true,
-    maxlength:[20,' last name cannot exceed 20 char']
   },
 
   demo_URL: {

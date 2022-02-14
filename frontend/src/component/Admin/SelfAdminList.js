@@ -19,7 +19,7 @@ const SelfAdminList = ({ history, params }) => {
   );
 
   const { error: deleteError, isDeleted } = useSelector(
-    (state) => state.projectAdminDelete
+    (state) => state.projectUpDel
   );
 
   const deleteProjectHandler = (id) => {
@@ -93,6 +93,7 @@ const SelfAdminList = ({ history, params }) => {
 
                   <Button variant="warning">
                     <Link to={`/admin/projectAdminDetailsAll/${item._id}`}>
+                      
                       Edit
                     </Link>
                   </Button>
