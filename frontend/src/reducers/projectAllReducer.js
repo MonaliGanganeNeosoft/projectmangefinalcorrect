@@ -30,6 +30,7 @@ import {
     PROJECT_DETAILS_SUCCESS,
     CLEAR_ERRORS
 }from '../constants/projectAllConstants'
+//get all tab project
 export const projectAllReducer=(state={projectDetails:[]},action)=>{
     switch (action.type){
         case ALL_PROJECTALL_REQUEST:
@@ -59,7 +60,7 @@ export const projectAllReducer=(state={projectDetails:[]},action)=>{
             return state;
     }
 };
-//new all project
+//new all project =>all tab
 export const newProjectAllReducer = (state = { projectDetails:[] }, action) => {
   switch (action.type) {
     case NEWAll_PROJECT_REQUEST:
@@ -94,7 +95,7 @@ export const newProjectAllReducer = (state = { projectDetails:[] }, action) => {
   }
 };
 
-
+//for admin self
 export const projectAllAdminReducer=(state={projectAdminDetailsAll:[]},action)=>{
   switch (action.type){
      
@@ -124,88 +125,7 @@ export const projectAllAdminReducer=(state={projectAdminDetailsAll:[]},action)=>
           return state;
   }
 };
-//delete admin
-export const projectDeleteAdminReducer=(state={},action)=>{
-  switch (action.type){
-      case DELETE_ADMINPROJECT_REQUEST:
-       
-          return{
-              
-              ...state,
-              loading:true,
-          }
-      case DELETE_ADMINPROJECT_SUCCESS:
-          return{
-            ...state,
-              loading:false,
-             isDeleted:action.payload,
-          };
-
-          
-      case DELETE_ADMINPROJECT_FAIL:
-       
-          return{
-            ...state,
-              loading:false,
-              error:action.payload,
-          };
-
-          case DELETE_ADMINPROJECT_RESET:
-          return{
-            ...state,
-              isDeleted:false,
-          };
-         
-          
-          case CLEAR_ERRORS:
-              return{
-                  ...state,
-                  error:null,
-              };
-      default:
-          return state;
-  }
-};
-//update admin
-export const projectUpdateAdminReducer=(state={},action)=>{
-  switch (action.type){
-      case UPDATE_ADMINPROJECT_REQUEST:
-          return{
-              
-              ...state,
-              loading:true,
-          }
-      case UPDATE_ADMINPROJECT_SUCCESS:
-            return{
-              ...state,
-                loading:false,
-               isUpdated:action.payload,
-            };
-     
-        case UPDATE_ADMINPROJECT_FAIL:
-          return{
-            ...state,
-              loading:false,
-              error:action.payload,
-          };
-
-         
-          case UPDATE_ADMINPROJECT_RESET:
-          return{
-            ...state,
-              isUpdated:false,
-          };
-          
-          case CLEAR_ERRORS:
-              return{
-                  ...state,
-                  error:null,
-              };
-      default:
-          return state;
-  }
-};
-
+//self sepearte projectdetail
 export const projectAllDetailsReducer=(state={projectDetail:{}},action)=>{
     switch (action.type){
         case PROJECT_DETAILS_REQUEST:
@@ -231,6 +151,56 @@ export const projectAllDetailsReducer=(state={projectDetail:{}},action)=>{
         default:
             return state;
     }
+};
+
+//update delete admin
+
+export const projectUpdateDeleteReducer = (state = {}, action) => {
+  switch (action.type) {
+    case DELETE_ADMINPROJECT_REQUEST:
+    case UPDATE_ADMINPROJECT_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case DELETE_ADMINPROJECT_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isDeleted: action.payload,
+      };
+
+    case UPDATE_ADMINPROJECT_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isUpdated: action.payload,
+      };
+    case DELETE_ADMINPROJECT_FAIL:
+    case UPDATE_ADMINPROJECT_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case DELETE_ADMINPROJECT_RESET:
+      return {
+        ...state,
+        isDeleted: false,
+      };
+    case UPDATE_ADMINPROJECT_RESET:
+      return {
+        ...state,
+        isUpdated: false,
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+    default:
+      return state;
+  }
 };
 //new create admin project
 export const newProjectReducer = (state = { projectAdminDetailsAll:[] }, action) => {

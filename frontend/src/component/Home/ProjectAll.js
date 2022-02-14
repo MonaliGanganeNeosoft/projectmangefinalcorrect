@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Img} from "react-bootstrap";
+import "./ProjectAll.css"
 const ProjectAll = ({project}) => {
   return (
     
     <>
     <Link className="projectCard" to={`/projectDetail/${project._id}`}>
       <div className='innerhomecomponent'>
-          <Card style={{ width: "25rem",marginLeft:"60px",marginBottom:"50px" }}>
-            
-            <Card.Body style={{width:"400px"}}>
+         
+          <Card style={{ marginBottom:"50px" }}>
+            <Card.Body >
               <Card.Title style={{textAlign:"center"}}>{project.title}</Card.Title>
               
               <Card.Img

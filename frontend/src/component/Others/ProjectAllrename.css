@@ -1,0 +1,12 @@
+@media (max-width: 575.98px) {
+  .innerhomecomponent {
+    width: 300px;
+  }
+  .innerhomecomponent .card {
+    margin-left: 50px;
+  }
+  .innerhomecomponent .card-body {
+    width: 200px;
+    margin-left: 30px;
+  }
+}

@@ -5,7 +5,7 @@ import { getAllProject } from '../../actions/projectAllaction';
 import { useSelector,useDispatch } from 'react-redux';
 import Loader from '../layout/Loader/Loader';
 import {useAlert} from "react-alert";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Homeall = () => {
@@ -27,7 +27,9 @@ const Homeall = () => {
       <Loader />
     ):(
       <>
-      <p className='homeHeading'>All Projects</p>
+      <div className='homeallls'> 
+    
+     <p className='homeHeading'>All Projects</p>
        <div className='btnhomeall'>
        <Button variant="warning">
           <Link to="/admin/allcreate">Add project</Link>
@@ -40,6 +42,8 @@ const Homeall = () => {
             ))
           }
         </div> 
+     
+     </div>
       </>
     )}
     </>

@@ -11,7 +11,7 @@ import { Form, FormControl, Button, InputGroup } from "react-bootstrap";
 import { IoMdMail } from "react-icons/io";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
-import "./Login.css"
+import "./Login.css";
 const Login = ({ history, location }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -30,7 +30,7 @@ const Login = ({ history, location }) => {
     e.preventDefault();
     dispatch(login(loginEmail, loginPassword));
   };
-    const redirect = location.search ? location.search.split("=")[1] : "/all";
+  const redirect = location.search ? location.search.split("=")[1] : "/all";
 
   // const redirect="/all";
   useEffect(() => {
@@ -46,8 +46,7 @@ const Login = ({ history, location }) => {
 
   const [showpassword, setShowPassword] = useState(false);
 
-  const [data,setData]=useState("");
-   
+  const [data, setData] = useState("");
 
   return (
     <>
@@ -55,67 +54,76 @@ const Login = ({ history, location }) => {
         <Loader />
       ) : (
         <>
-          <div className="loginpageContainer" style={{width:"100vw",height:"100vh",maxWidth:"100%",backgroundColor:"white",position:"fixed",top:"0%"}}>
-           
-
+          <div
+            className="loginpageContainer"
+            style={{
+              width: "100vw",
+              height: "100vh",
+              maxWidth: "100%",
+              backgroundColor: "white",
+              position: "fixed",
+              top: "0%",
+            }}
+          >
             <hr />
 
-            <div className="login" style={{width:"400px",marginLeft:"500px",marginTop:"100px" }}>
-            <Container text-start  bg-light>
-              <Form ref={loginTab} onSubmit={loginSubmit}>
-                <h4>Login to Project Management</h4>
-                <Form.Group>
-                  <InputGroup>
-                    <FormControl
-                      type="email"
-                      placeholder="Email Address"
-                      name="email"
-                      value={loginEmail}
-                      onChange={(e) => setLoginEmail(e.target.value)}
-                      required
-
-                    />
-                    <IoMdMail className="iconlogin" />
-                  </InputGroup>
-                </Form.Group>
-                <div className="password" style={{marginTop:"10px"}}>
-                <Form.Group>
-                  <InputGroup>
-                    <FormControl
-                      name="password"
-                      placeholder="Password"
-                      type={showpassword ? "text" : "password"}
-                      required
-                      value={loginPassword}
-                      onChange={(e) => setLoginPassword(e.target.value)}
-                    />
-                    {showpassword ? (
-                      <BsEyeFill
-                        className="iconlogin"
-                        onClick={() => setShowPassword(false)}
+            {/* <div className="login" style={{width:"400px",marginLeft:"500px",marginTop:"100px" }}> */}
+            <div className="login">
+              <Container text-start bg-light>
+                <Form ref={loginTab} onSubmit={loginSubmit}>
+                  <h4>Login to Project Management</h4>
+                  <Form.Group>
+                    <InputGroup>
+                      <FormControl
+                        type="email"
+                        placeholder="Email Address"
+                        name="email"
+                        value={loginEmail}
+                        onChange={(e) => setLoginEmail(e.target.value)}
+                        required
                       />
-                    ) : (
-                      <BsEyeSlashFill
-                        className="iconlogin"
-                        onClick={() => setShowPassword(true)}
-                      />
-                    )}
-                  </InputGroup>
-                </Form.Group>
-
-                </div>
-                <div className="btnlast" style={{textAlign:"center",marginTop:"20px"}}>
-                <Button type="submit" >Login</Button>
-                </div>
-              </Form>
-              <p className="w-100 text-start" style={{textAlign:"center"}}>
-                <span style={{ cursor: "pointer" }}>
-                  <Link to="/register">dont have account pls ? Register</Link>
-                </span>
-            </p>
-            </Container>
+                      <IoMdMail className="iconlogin" />
+                    </InputGroup>
+                  </Form.Group>
+                  <div className="password" style={{ marginTop: "10px" }}>
+                    <Form.Group>
+                      <InputGroup>
+                        <FormControl
+                          name="password"
+                          placeholder="Password"
+                          type={showpassword ? "text" : "password"}
+                          required
+                          value={loginPassword}
+                          onChange={(e) => setLoginPassword(e.target.value)}
+                        />
+                        {showpassword ? (
+                          <BsEyeFill
+                            className="iconlogin"
+                            onClick={() => setShowPassword(false)}
+                          />
+                        ) : (
+                          <BsEyeSlashFill
+                            className="iconlogin"
+                            onClick={() => setShowPassword(true)}
+                          />
+                        )}
+                      </InputGroup>
+                    </Form.Group>
+                  </div>
+                  <div
+                    className="btnlast"
+                    style={{ textAlign: "center", marginTop: "20px" }}
+                  >
+                    <Button type="submit">Login</Button>
+                  </div>
+                </Form>
+                <p className="w-100 text-start" style={{ textAlign: "center" }}>
+                  <span style={{ cursor: "pointer" }}>
+                    <Link to="/register">dont have account pls ? Register</Link>
+                  </span>
+                </p>
+              </Container>
             </div>
-            
           </div>
         </>
       )}
